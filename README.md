@@ -1,4 +1,4 @@
-![image](https://github.com/Nazib-hossain/SP-Lab-Project/assets/169280061/ed28d6fa-0af0-477f-81dd-f36c4e63a1d7)# SP-Lab-Project
+# SP-Lab-Project
 This Is my semister project on C code done by using codeblock.idm. 
 This project consits of a code written by myself (Nazib Ibne Hossain) on Hotel customer management system. Here is the code that I used for making this project:
 
