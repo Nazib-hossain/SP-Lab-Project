@@ -1,71 +1,94 @@
-# SP-Lab-Project
+![image](https://github.com/Nazib-hossain/SP-Lab-Project/assets/169280061/ed28d6fa-0af0-477f-81dd-f36c4e63a1d7)# SP-Lab-Project
 This Is my semister project on C code done by using codeblock.idm. 
 This project consits of a code written by myself (Nazib Ibne Hossain) on Hotel customer management system. Here is the code that I used for making this project:
 
 
-#include <stdio.h>
-#include <stdbool.h>          //For loop and switch uses in functions
-#include <conio.h>           // For _getch() function
-#define NUM_ROOMS 50
 
-// Structure to represent a customer
+          #include <stdio.h>
+          #include <stdbool.h>          //For loop and switch uses in functions
+          #include <conio.h>           // For _getch() function
+          #define NUM_ROOMS 50
 
-struct Customer {
+    // Structure to represent a customer
+
+    struct Customer 
+    {
+
     int roomNumber;
     int numGuests;
     int stayDuration;        // in days
     int Occupied;
-};
+    
+    };
 
-// Initialize array of customers
 
-struct Customer customers[NUM_ROOMS] = {0};
+    // Initialize array of customers
 
-// Function to check if a room is occupied
+    struct Customer customers[NUM_ROOMS] = {0};
 
-int RoomOccupied(int roomNumber) {
+    // Function to check if a room is occupied
+
+    int RoomOccupied(int roomNumber) 
+
+    {
+
     return customers[roomNumber - 1].Occupied;
-}
+    
+    }
 
-// Function to mark a room as occupied and update customer details
+       // Function to mark a room as occupied and update customer details
 
-void checkIn(int roomNumber, int numGuests, int stayDuration) {
+       void checkIn(int roomNumber, int numGuests, int stayDuration)
+      {
+
     struct Customer *customer = &customers[roomNumber - 1];
     customer->roomNumber = roomNumber;
     customer->numGuests = numGuests;
     customer->stayDuration = stayDuration;
     customer->Occupied = true;
-}
+    
+    }
 
-// Function to mark a room as unoccupied
 
-void checkOut(int roomNumber) {
+    // Function to mark a room as unoccupied
+
+    void checkOut(int roomNumber) 
+
+     {
+
     customers[roomNumber - 1].Occupied = false;
-}
+    
+    }
 
-// Function to display room status
+    // Function to display room status
 
-void displayRoomStatus() {
+    void displayRoomStatus() 
+
+    {
+
     printf("\n");
     printf("\n");
     printf("\tRoom Status (Occupied = Occupied, Unoccupied = U):\n");
     printf("\t-------------------------------------------------\n");
     printf("\n");
     for (int i = 0; i < NUM_ROOMS; i++)
+    
     {
+    
         printf("\n");
         printf("\t      Room %d: %c\n", i + 1, RoomOccupied(i + 1) ? 'O' : 'U');
-
+        
     }
-}
+    
+    }
 
-// Function to clear the terminal screen
+    // Function to clear the terminal screen
 
-void clearScreen() {
+    void clearScreen() {
     system("cls");         // Execute the "cls" command to clear the console
-}
+    }
 
-int main() {
+    int main() {
     int choice;
 
     do {
